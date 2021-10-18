@@ -1,0 +1,45 @@
+.row {
+ text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 75px;
+}
+
+/* buttons styling */
+
+#replay {
+  display: flex;
+  justify-content: space-between;
+  background-color: #daa520;
+  border: black solid;
+  border-style: bold;
+  border-width: 5px;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  
+}
+
+#view-board {
+  display: flex;
+  justify-content: space-between;
+  background-color: #daa520;
+  border: black solid;
+  border-style: bold;
+  border-width: 5px;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+
+.button {
+  display: flex;
+  justify-content: space-evenly;
+}

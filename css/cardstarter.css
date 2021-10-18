@@ -39,47 +39,47 @@
   .card.outline {
     background-image: none;
     background-color: rgba(195, 195, 195, 0.5);
-    border: 0.15em dashed #daa520; }
+    border: 0.15em solid #daa520; }
 
 .card.diamonds.A,
 .card.dA,
 .card.♦A {
-  background-image: url("../images/diamonds/diamonds-A.svg"); }
+  background-image: url("../images/HP/HPCrest.jpg"); }
 
 .card.diamonds.K,
 .card.dK,
 .card.♦K {
-  background-image: url("../images/diamonds/diamonds-K.svg"); }
+  background-image: url("../images/HP/HPDementor.jpg"); }
 
 .card.diamonds.Q,
 .card.dQ,
 .card.♦Q {
-  background-image: url("../images/diamonds/diamonds-Q.svg"); }
+  background-image: url("../images/HP/HPFace.jpg"); }
 
 .card.diamonds.J,
 .card.dJ,
 .card.♦J {
-  background-image: url("../images/diamonds/diamonds-J.svg"); }
+  background-image: url("../images/HP/HPHallows.jpg"); }
 
 .card.diamonds.r10,
 .card.d10,
 .card.♦10 {
-  background-image: url("../images/diamonds/diamonds-r10.svg"); }
+  background-image: url("../images/HP/HPHat.jpg"); }
 
 .card.diamonds.r09,
 .card.d09,
 .card.♦09 {
-  background-image: url("../images/diamonds/diamonds-r09.svg"); }
+  background-image: url("../images/HP/HPOwl.jpg"); }
 
 .card.diamonds.r08,
 .card.d08,
 .card.♦08 {
-  background-image: url("../images/diamonds/diamonds-r08.svg"); }
+  background-image: url("../images/HP/HPPlatform.jpg"); }
 
 .card.diamonds.r07,
 .card.d07,
 .card.♦07 {
-  background-image: url("../images/diamonds/diamonds-r07.svg"); }
+  background-image: url("../images/HP/HPSwear.jpeg"); }
 
 .card.diamonds.r06,
 .card.d06,
@@ -311,7 +311,7 @@
   background-image: url("../images/jokers/joker-red.svg"); }
 
 .card.back {
-  background-image: url("../images/backs/blue.svg"); }
+  background-image: url("../images/HP/HPLB.png"); }
 
 .card.back-blue {
   background-image: url("../images/backs/blue.svg"); }
