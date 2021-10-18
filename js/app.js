@@ -8,7 +8,7 @@ let playBoard = []
 /*---------------------------- Variables (state) ----------------------------*/
 // -cards 12 () different images 
 
-let winner
+let winner =
 
 
 
