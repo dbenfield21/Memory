@@ -15,12 +15,14 @@ let winner
 // Cached Element References & Event Listeners
 
 
-// -Event Listeners: Winner message/Game is over, play button, matching cards message, Event Reset/Replay button, Number of matches, card clicked show image. 
+// -Event Listeners: 
+
+Winner message/Game is over, play button, matching cards message, Event Reset/Replay button, card clicked show image. 
 
 //  Use a for loop to add an event listener to all the cards
 
 // Functions 
-// -Init
+// -Init 
 // -Render
 // -Handle click
 // -Matching Cards
