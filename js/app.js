@@ -8,7 +8,7 @@ let playBoard = []
 /*---------------------------- Variables (state) ----------------------------*/
 // -cards 12 () different images 
 
-let winner =
+let winner 
 
 
 
@@ -16,7 +16,7 @@ let winner =
 
 
 // card click show image, do something 
-let cardX = document.querySelectorAll("cardxlargeshadow")
+let cardEls = document.querySelectorAll('.card')
 let message = document.getElementById("message") 
 let replayButtton = document.getElementById("replay")
 let peekButton = document.getElementById("view-board")
@@ -26,13 +26,29 @@ let peekButton = document.getElementById("view-board")
 /*----------------------------- Event Listeners -----------------------------*/
 // card click - Use a for loop to add an event listener to all the cards
 
-cardX.forEach((cardX) => {
-	cardX.addEventListener('click', handleClick) 
-    console.log(cardX)
+
+cardEls.forEach(card => {
+  card.addEventListener('click', handleClick)
 })
 
+function handleClick(evt){
+  console.log(evt.target)
+}
 
-  
+
+
+// card to flip and show the 
+
+
+
+
+
+
+// boardCards.addEventListener("click", function(evt) {
+//   console.log(evt)
+// })
+
+
 
 // let deck1El = document.querySelectorAll(".card");
 
@@ -45,20 +61,20 @@ cardX.forEach((cardX) => {
 //   });
 // });
 
-// Replay button 
-replay.addEventListener('click', init)
+// // Replay button 
+// replay.addEventListener('click', init)
 
 
 
-Winner message/Game is over
+// Winner message/Game is over
 
 
 
-matching cards message
+// matching cards message
 
 
 
-/*-------------------------------- Functions --------------------------------*/
+// /*-------------------------------- Functions --------------------------------*/
 
 
 // -Init 
@@ -70,29 +86,29 @@ function init () {
 
 
 
-// -Render
+// // -Render
 
-function render () {
-playBoard.forEach(function(card) {
-  if
-  else if
-  else 
+// function render () {
+// playBoard.forEach(function(card) {
+//   if
+//   else if
+//   else 
 
-}
-}
+// }
+// }
 
 
-// -Handle click
+// // -Handle click
 
-function handleClick(evt) {
-// let 
+// function handleClick(evt) {
+// // let 
 
-}
-// -Matching Cards
-function matchCards ()
- if ("c1" === "c2") {
+// }
+// // -Matching Cards
+// function matchCards ()
+//  if ("c1" === "c2") {
 
- }
+//  }
 
 
 
@@ -121,5 +137,5 @@ function matchCards ()
 // need 2nd array for cards that have been matched 
 // all event listeners and functions for event listeners
 // figure out how to put image on front of card (right now just has back image)
+    // set a target hidden class with the image set as a class in the HTML????? 
 // 
-
