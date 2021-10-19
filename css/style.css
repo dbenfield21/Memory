@@ -1,3 +1,8 @@
+
+
+
+
+
 .row {
  text-align: center;
 }
@@ -5,6 +10,16 @@
 h1 {
   text-align: center;
   font-size: 75px;
+  color: white;
+  text-emphasis: bold;
+
+}
+
+h2, h3 {
+  text-align: center;
+  font-size: 25px;
+  color: goldenrod;
+  text-emphasis: bold;
 }
 
 /* buttons styling */
@@ -12,7 +27,7 @@ h1 {
 #replay {
   display: flex;
   justify-content: space-between;
-  background-color: #daa520;
+  background-color: goldenrod;
   border: black solid;
   border-style: bold;
   border-width: 5px;
@@ -43,3 +58,8 @@ h1 {
   display: flex;
   justify-content: space-evenly;
 }
+
+body {
+  background-image: url("../images/HP/space-stars-wallpaper-preview.jpeg");
+  background-color: #cccccc;
+ }
