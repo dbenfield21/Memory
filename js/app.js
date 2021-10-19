@@ -3,7 +3,7 @@
 const cards = ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"]
 let playBoard = []
 
-
+// if you're going to compare cards for a memory game, it might help to have 6 pairs of matching values in your cards array so you can compare them in a checkMatch(card1, card2) function or something similar. Need to add 6 pairs of matching values to array, HOW??
 
 /*---------------------------- Variables (state) ----------------------------*/
 // -cards 12 () different images 
