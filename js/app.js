@@ -1,7 +1,9 @@
 /*-------------------------------- Constants --------------------------------*/
 // -correct card matches (6)
-const cards = ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"]
+const cards = []
 let playBoard = []
+
+
 
 // if you're going to compare cards for a memory game, it might help to have 6 pairs of matching values in your cards array so you can compare them in a checkMatch(card1, card2) function or something similar. Need to add 6 pairs of matching values to array, HOW??
 
@@ -13,6 +15,7 @@ let winner
 
 
 /*------------------------ Cached Element References ------------------------*/
+
 
 
 // card click show image, do something 
@@ -31,43 +34,20 @@ cardEls.forEach(card => {
   card.addEventListener('click', handleClick)
 })
 
-function handleClick(evt){
-  console.log(evt.target)
-}
-
-
-
-// card to flip and show the 
 
 
 
 
 
-
-// boardCards.addEventListener("click", function(evt) {
-//   console.log(evt)
-// })
-
-
-
-// let deck1El = document.querySelectorAll(".card");
-
-// deck1El.forEach((item) => {
-//   item.addEventListener("click", (event) => {
-//     debugger;
-//     if (allowFlip) {
-//       processClick(event);
-//     }
-//   });
-// });
-
-// // Replay button 
+// Replay button 
 // replay.addEventListener('click', init)
 
 
 
-// Winner message/Game is over
+// Winner message/Game is over FUNCTION
+function Winner () {
 
+}
 
 
 // matching cards message
@@ -78,8 +58,10 @@ function handleClick(evt){
 
 
 // -Init 
+
 function init () {
-  cards = ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c10", "c11"]
+  cards =["hp1", "hp1", "hp2", "hp2", "hp3", "hp3", "hp4", "hp4", "hp5", "hp5", "hp6", "hp6"]
+  // DO I NEED TO PUT SHUFFLED CARDS EMPTY ARRAY IN HERE
   winner = false
   render()
 }
@@ -89,26 +71,69 @@ function init () {
 // // -Render
 
 // function render () {
-// playBoard.forEach(function(card) {
-//   if
-//   else if
-//   else 
+  // playBoard.forEach(function(card) {
+    //   if
+    //   else if
+    //   else 
+    
+    // }
+    // }
+    
+    
+//shuffle 
+    
+  function shuffle(cardsToShuffle) {
+    let shuffledCards = [];
+    let shuffleHolder;
+    for (i=1; i=cardsToShuffle.length; i++){
+      randIdx=Math.floor(Math.random()*cardsToShuffle.length);
+      shuffleHolder = cardsToShuffle.splice(randIdx, 1);
+      shuffledCards.push(`${shuffleHolder}`);
+    }
+    return shuffledCards;
+    init()
+  }
+  
+    
+// handle click 
+    
+    function handleClick(evt){
+      console.log(evt.target)
+    //   for (i=0; i < cards.length; i++) {
 
-// }
-// }
+    //   if (card === clicked)
+    //   {
+    //     cardEls[i].classList.remove("back")
+    //     cardEls[i].classList.add("hp1") 
+    //   }
+    //   else {
+
+    //   }
+    // }
+      }
 
 
-// // -Handle click
+      
 
-// function handleClick(evt) {
-// // let 
+    //  (cardEls[i] )
+    //  if (cardEls[0].classList.remove("back") 
+    //  {   
+    // })
 
-// }
-// // -Matching Cards
-// function matchCards ()
-//  if ("c1" === "c2") {
+  
+      
 
-//  }
+
+// -Matching Cards
+
+  function matchCards () {
+    if ("c1" === "c2") {
+
+    }
+
+  }
+
+
 
 
 
@@ -134,8 +159,28 @@ function init () {
 
 // TO DO
 // write functions
-// need 2nd array for cards that have been matched 
+// //need 2nd array for cards that have been matched 
 // all event listeners and functions for event listeners
 // figure out how to put image on front of card (right now just has back image)
     // set a target hidden class with the image set as a class in the HTML????? 
 // 
+
+
+// //Rename pics
+// //shuffle function SORT OF DONE< NEED TO TEST AND EDIT
+// handle click function to display image of card when clicked. Based on position in cards array. 
+
+// function tell it to hide the back image. (remove back class, adds class of image that wants to be added) part of handle click function. 1. check if card has already been clicked. Remove class name thats giving
+
+
+
+
+
+
+
+// function shuffle (cards) {
+//   for (let i = cards.length - 1; i>0; i++) {
+//     let j = Math.floor(Math.random() * (i + 1));
+//     [array[i], array[j]] = [array [j], array [i]];  }
+//     render()
+//   }

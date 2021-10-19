@@ -42,34 +42,71 @@
     border: 0.15em solid #daa520; }
 
 .card.diamonds.A,
-.card.dA,
+.card.hp1
 .card.♦A {
-  background-image: url("../images/HP/HPCrest.jpg"); }
+  background-image: url("../images/HP/hp1.jpg"); }
 
 .card.diamonds.K,
-.card.dK,
+.card.hp2
 .card.♦K {
-  background-image: url("../images/HP/HPDementor.jpg"); }
+  background-image: url("../images/HP/hp2.jpeg"); }
 
 .card.diamonds.Q,
-.card.dQ,
+.card.hp3
 .card.♦Q {
-  background-image: url("../images/HP/HPFace.jpg"); }
+  background-image: url("../images/HP/hp3.jpg"); }
 
 .card.diamonds.J,
-.card.dJ,
+.card.hp4
 .card.♦J {
-  background-image: url("../images/HP/HPHallows.jpg"); }
+  background-image: url("../images/HP/hp4.jpg"); }
 
 .card.diamonds.r10,
-.card.d10,
+.card.hp5
 .card.♦10 {
-  background-image: url("../images/HP/HPHat.jpg"); }
+  background-image: url("../images/HP/hp5.jpg"); }
 
 .card.diamonds.r09,
-.card.d09,
+.card.hp6
 .card.♦09 {
-  background-image: url("../images/HP/HPOwl.jpg"); }
+  background-image: url("../images/HP/hp6.jpg"); }
+
+.card.back {
+  background-image: url("../images/HP/hpb.png"); }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .card.diamonds.r08,
 .card.d08,
@@ -299,7 +336,7 @@
 .card.clubs.r02,
 .card.c02,
 .card.♣02 {
-  background-image: url("../images/clubs/clubs-r02.svg"); }
+  background-image: url("../images/HP/HP1.jpg"); }
 
 .card.joker {
   background-image: url("../images/jokers/joker.svg"); }
