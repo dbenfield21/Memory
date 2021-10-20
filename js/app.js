@@ -154,47 +154,29 @@ function render () {
     
     
     function checkForMatch (card1, card2){
-      console.log(card1, card2)
+      // console.log(card1, card2)
       if (card1.name === card2.name) {
-        
-        allCards.forEach(pickedCard) 
-        cards[evt.target.id].status = "picked"
+        forEach(pickedCard) 
+        cards[evt.target.id].status = "matched"
       }
-      else () {
-        
+      else  {
+        forEach
+        cards[evt.target.id].status = "hidden"
       }
-      
-      
-
-
-
-
-
-
-
-      
-          cardEls.forEach((card, idx) => {
-            if (cards[idx].status === "hidden"){
-              card.className = "card xlarge shadow back"
-            }
-            else {
-              card.className = `${cards[idx].name} card xlarge shadow`
-            }
-          })
     }
+      
+
+
+
+
+
+
+
+
     // if card 1 === card 2 then match message, third status property that = matched. 
     // loop cards.forEach and if the status is picked change to matched. 
     // else card 1 doesnt = 2 then change back to hidden 
     // loop with cards.forEach and if the status is picked change to hidden.  
-
-
-}
-
-
-
-
-
-
 
 
 
