@@ -10,7 +10,9 @@ let playBoard = []
 /*---------------------------- Variables (state) ----------------------------*/
 // -cards 12 () different images 
 
-let winner 
+let winner
+let firstPick 
+
 
 
 
@@ -55,11 +57,12 @@ replay.addEventListener('click', init)
 
 function init() {
   let newDeck = [
-    {name:"hp1", status: 'matched'}, {name:"hp1", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp3", status: 'matched'}, {name:"hp3", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp5", status: 'hidden'}, {name:"hp5", status: 'matched'}, {name:"hp6", status: 'hidden'}, {name:"hp6", status: 'hidden'}]
+    {name:"hp1", status: 'hidden'}, {name:"hp1", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp3", status: 'hidden'}, {name:"hp3", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp5", status: 'hidden'}, {name:"hp5", status: 'hidden'}, {name:"hp6", status: 'hidden'}, {name:"hp6", status: 'hidden'}]
   // shuffle the deck
   cards = shuffle(newDeck)
   // DO I NEED TO PUT SHUFFLED CARDS EMPTY ARRAY IN HERE
   winner = false
+  firstPick = true
   render()
   console.log(cards)
 }
@@ -98,29 +101,26 @@ function render () {
 // handle click 
     
     function handleClick(evt){
-      console.log(evt.target)
-    //   for (i=0; i < cards.length; i++) {
-
-    //   if (card === clicked)
-    //   {
-    //     cardEls[i].classList.remove("back")
-    //     cardEls[i].classList.add("hp1") 
-    //   }
-    //   else {
-
-    //   }
-    // }
+      if (firstPick === true) {
+        // if this is the first card clicked then change status to picked.
+        cards[evt.target.id].status = "picked"
+        
+        firstPick = false
+      } else  {
+        // if 2nd card picked to picked THEN check if card 1 and card 2 are matches
+        firstPick= true 
+        cards[evt.target.id].status = "picked"
+        console.log(cards[evt.target.id])
       }
+      render()
+    }
 
 
       
+    
 
-    //  (cardEls[i] )
-    //  if (cardEls[0].classList.remove("back") 
-    //  {   
-    // })
+   
 
-  
       
 
 
@@ -144,15 +144,15 @@ function render () {
 // If they are matching then “Matching message” (Maybe audio?)
 // Cards stay on the board (or disappear if possible) (ANIMATE?)
 // If they are NOT matching, return to original color/image.
-// Repeat that until all cards have been matched
-// Message “all cards have been matched” (Maybe audio?)
+// Repeat that until all cards have been hidden
+// Message “all cards have been hidden” (Maybe audio?)
 // Replay button
 // Return board to init state
 
 
 // TO DO
 // write functions
-// //need 2nd array for cards that have been matched 
+// //need 2nd array for cards that have been hidden 
 // all event listeners and functions for event listeners
 // figure out how to put image on front of card (right now just has back image)
     // set a target hidden class with the image set as a class in the HTML????? 
