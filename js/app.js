@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 // -correct card matches (6)
-const cards = []
+let cards = []
 let playBoard = []
 
 
@@ -40,17 +40,11 @@ cardEls.forEach(card => {
 
 
 // Replay button 
-// replay.addEventListener('click', init)
+replay.addEventListener('click', init)
 
 
 
-// Winner message/Game is over FUNCTION
-function Winner () {
 
-}
-
-
-// matching cards message
 
 
 
@@ -59,26 +53,33 @@ function Winner () {
 
 // -Init 
 
-function init () {
-  cards =["hp1", "hp1", "hp2", "hp2", "hp3", "hp3", "hp4", "hp4", "hp5", "hp5", "hp6", "hp6"]
+function init() {
+  let newDeck = [
+    {name:"hp1", status: 'matched'}, {name:"hp1", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp3", status: 'matched'}, {name:"hp3", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp5", status: 'hidden'}, {name:"hp5", status: 'matched'}, {name:"hp6", status: 'hidden'}, {name:"hp6", status: 'hidden'}]
+  // shuffle the deck
+  cards = shuffle(newDeck)
   // DO I NEED TO PUT SHUFFLED CARDS EMPTY ARRAY IN HERE
   winner = false
   render()
+  console.log(cards)
 }
 
+init()
 
+//  -Render
 
-// // -Render
-
-// function render () {
-  // playBoard.forEach(function(card) {
-    //   if
-    //   else if
-    //   else 
-    
-    // }
-    // }
-    
+function render () {
+  // loop over all of the card elements and render them based on the status property of the object located within the matching index of the cards array
+  cardEls.forEach((card, idx) => {
+    if (cards[idx].status === "hidden"){
+      card.className = "card xlarge shadow back"
+    }
+    else {
+      card.className = `${cards[idx].name} card xlarge shadow`
+    }
+  })
+}
+  
     
 //shuffle 
     
@@ -88,11 +89,10 @@ function init () {
     for (i=1; i=cardsToShuffle.length; i++){
       randIdx=Math.floor(Math.random()*cardsToShuffle.length);
       shuffleHolder = cardsToShuffle.splice(randIdx, 1);
-      shuffledCards.push(`${shuffleHolder}`);
+      shuffledCards.push(shuffleHolder[0]);
     }
     return shuffledCards;
-    init()
-  }
+    }
   
     
 // handle click 
@@ -126,14 +126,7 @@ function init () {
 
 // -Matching Cards
 
-  function matchCards () {
-    if ("c1" === "c2") {
-
-    }
-
-  }
-
-
+ 
 
 
 
@@ -177,10 +170,3 @@ function init () {
 
 
 
-
-// function shuffle (cards) {
-//   for (let i = cards.length - 1; i>0; i++) {
-//     let j = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[j]] = [array [j], array [i]];  }
-//     render()
-//   }
