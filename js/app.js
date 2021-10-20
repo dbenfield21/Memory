@@ -96,7 +96,7 @@ function render () {
         // if this is the first card clicked then change status to picked.
         cards[evt.target.id].status = "picked"
         card1 = cards[evt.target.id].name
-               firstPick = false
+        firstPick = false
       } else  {
         // if 2nd card picked to picked THEN check if card 1 and card 2 are matches
         firstPick= true 
@@ -110,56 +110,94 @@ function render () {
 
     // -Matching Cards
 
-    function checkForMatch (card1, card2){
-      console.log(card1, card2)
-      // if card 1 === card 2 then match message, third status property that = matched. 
-      // loop cards.forEach and if the status is picked change to matched. 
-      // else card 1 doesnt = 2 then change back to hidden 
-       // loop with cards.forEach and if the status is picked change to hidden.  
-    }
-    
-
    
 
+   
+    
+    
+    
+    
+    
+    
+    
+    // Step by Step
+    
+    // Start Game. Run init, basic board set up. 
+    // Play button-Event listener 
+    // Cards need to be active to click 
+    // Match image hidden, all  cards showing same image or color.  
+    // Click 1st card
+    // Show image, card remains on the screen/don’t go back to the original color. 
+    // Click 2nd card
+    // Show image, remains on the screen/don’t go back to the original color. 
+    // Determine if card 1 and card 2 are matching
+    // If they are matching then “Matching message” (Maybe audio?)
+    // Cards stay on the board (or disappear if possible) (ANIMATE?)
+    // If they are NOT matching, return to original color/image.
+    // Repeat that until all cards have been hidden
+    // Message “all cards have been hidden” (Maybe audio?)
+    // Replay button
+    // Return board to init state
+    
+    
+    
+    
+    
+    
+    // 1a.  Inside your checkForMatch function, you'll have two conditions:  Either the cards match, or they don't.  Write an if--else statement to handle each of these cases.
+    
+    // 1b.  If the cards match (the 'if' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'matched'.
+    
+    // 1c.  If the cards to NOT match (the 'else' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'hidden'.
+    
+    // 1d.  After writing this code, you'll notice that when you flip the second card, you can't see it because it's flipping back to 'hidden' faster than the blink of an eye.  You need to wrap the inner part of the forEach loop inside of a setTimeout method and give it a delay, so the user is able to see the second card before they both flip back to 'hidden'.  Here's a hint on how to do that:
+    
+    
+    function checkForMatch (card1, card2){
+      console.log(card1, card2)
+      if (card1.name === card2.name) {
+        
+        allCards.forEach(pickedCard) 
+        cards[evt.target.id].status = "picked"
+      }
+      else () {
+        
+      }
+      
       
 
 
 
- 
-
-
-
-// Step by Step
-
-// Start Game. Run init, basic board set up. 
-// Play button-Event listener 
-// Cards need to be active to click 
-// Match image hidden, all  cards showing same image or color.  
-// Click 1st card
-// Show image, card remains on the screen/don’t go back to the original color. 
-// Click 2nd card
-// Show image, remains on the screen/don’t go back to the original color. 
-// Determine if card 1 and card 2 are matching
-// If they are matching then “Matching message” (Maybe audio?)
-// Cards stay on the board (or disappear if possible) (ANIMATE?)
-// If they are NOT matching, return to original color/image.
-// Repeat that until all cards have been hidden
-// Message “all cards have been hidden” (Maybe audio?)
-// Replay button
-// Return board to init state
 
 
 
 
+      
+          cardEls.forEach((card, idx) => {
+            if (cards[idx].status === "hidden"){
+              card.className = "card xlarge shadow back"
+            }
+            else {
+              card.className = `${cards[idx].name} card xlarge shadow`
+            }
+          })
+    }
+    // if card 1 === card 2 then match message, third status property that = matched. 
+    // loop cards.forEach and if the status is picked change to matched. 
+    // else card 1 doesnt = 2 then change back to hidden 
+    // loop with cards.forEach and if the status is picked change to hidden.  
 
 
-// 1a.  Inside your checkForMatch function, you'll have two conditions:  Either the cards match, or they don't.  Write an if--else statement to handle each of these cases.
+}
 
-// 1b.  If the cards match (the 'if' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'matched'.
 
-// 1c.  If the cards to NOT match (the 'else' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'hidden'.
 
-// 1d.  After writing this code, you'll notice that when you flip the second card, you can't see it because it's flipping back to 'hidden' faster than the blink of an eye.  You need to wrap the inner part of the forEach loop inside of a setTimeout method and give it a delay, so the user is able to see the second card before they both flip back to 'hidden'.  Here's a hint on how to do that:
+
+
+
+
+
+
 
 setTimeout(()=> {
   // this is where the code goes that you want to execute

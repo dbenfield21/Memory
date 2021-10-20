@@ -7,3 +7,4 @@
 ☐ **Technologies Used**: List of the technologies used, for example: JavaScript, HTML, CSS, etc.
 
 ☐ **Next Steps**: Planned future enhancements (icebox items).
+
