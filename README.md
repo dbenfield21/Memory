@@ -2,7 +2,7 @@
 
 ☐ **Getting Started**: Include a link to your deployed game and any instructions you deem important.
 
-☐ **Screenshot(s):** Images of your actual game.
+☐ **Screenshot(s):** Images of your actual game. 2
 
 ☐ **Technologies Used**: List of the technologies used, for example: JavaScript, HTML, CSS, etc.
 
