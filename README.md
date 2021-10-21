@@ -23,9 +23,9 @@ ___
 Wire Frame of intial game design:
 ![Wire Frame](/images/HP/wireframe.png)
 Playing board before any cards are matched:
-![Initial Board](/images/HP/UnmatchedBoard.png)
+![Initial Board](/images/HP/UnmatchedBoard1.png)
 Playing board with all cards matched:
-![MatchedBoard](/images/HP/MatchedBoard.png)
+![MatchedBoard](/images/HP/MatchedBoard1.png)
 
 
 ___
@@ -44,6 +44,8 @@ ___
     -Git
 
     -Surge for publishing 
+
+    -Google Fonts
 
     
 
