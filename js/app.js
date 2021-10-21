@@ -86,9 +86,9 @@ init()
       else {
         card.className = `${cards[idx].name} card large shadow`
       }
-    //  function winner (justMatched) {
+    //  function justMatched (win) {
     //  for (winner === true) 
-    // let justMatched = document.getElementById("message"),innerText = "You won, all cards matched!"
+    // let winner = document.getElementById("message"),innerText = "You won, all cards matched!"
     //       }
     })
   }
