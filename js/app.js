@@ -85,6 +85,7 @@ init()
       else {
         card.className = `${cards[idx].name} card xlarge shadow`
       }
+      console.log(winner)
     })
   }
   
@@ -129,41 +130,30 @@ init()
 
   function checkForMatch (card1, card2){
     if (card1.name === card2.name){ 
+        matches++
+        if(matches === 6) {
+          winner = true
+        }
       cards.forEach((card) => {
         if (card.status === "picked") {
             card.status = "matched"
-            // matchNumber ()
-            // while(card.status === "matched", matches <= 6) {
-            //   matches++
-            // }
+            
           }})}
             
     else  {
-        cards.forEach((card) => {
-        // setTimeout(()=> {
-        // checkForMatch(card1, card2)
-        // waitingForTimeout = true
-        //         }, 1000) 
-        //   // waitingForTimeout = false
-          if (card.status === "picked") {
-            card.status = "hidden"
-          }
-        })
+      cards.forEach((card) => {
+        if (card.status === "picked") {
+          setTimeout(()=> {
+          card.status = "hidden"
+          render()
+          }, 1000) 
+        }
+      })
         
-      }
     }
+  }
   
-  // function matchNumber() {
-  //   let cardEls = document.querySelectorAll(".card")
-  //   //see if all the cards are matched
-  //  
-    // cards.forEach((card) => {
-    //   if (card.status === "matched") {
-    //     matches++;
-    //   }
-    // })}
-
-
+  
 
 
 
@@ -199,7 +189,7 @@ init()
     
     //// 1c.  If the cards to NOT match (the 'else' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'hidden'.
     
-    // 1d.  After writing this code, you'll notice that when you flip the second card, you can't see it because it's flipping back to 'hidden' faster than the blink of an eye.  You need to wrap the inner part of the forEach loop inside of a setTimeout method and give it a delay, so the user is able to see the second card before they both flip back to 'hidden'.  Here's a hint on how to do that:
+    //// 1d.  After writing this code, you'll notice that when you flip the second card, you can't see it because it's flipping back to 'hidden' faster than the blink of an eye.  You need to wrap the inner part of the forEach loop inside of a setTimeout method and give it a delay, so the user is able to see the second card before they both flip back to 'hidden'.  Here's a hint on how to do that:
     
   
 

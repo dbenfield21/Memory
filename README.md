@@ -11,16 +11,6 @@
 
 
 
-// 1d.  After writing this code, you'll notice that when you flip the second card, you can't see it because it's flipping back to 'hidden' faster than the blink of an eye.  You need to wrap the inner part of the forEach loop inside of a setTimeout method and give it a delay, so the user is able to see the second card before they both flip back to 'hidden'.  Here's a hint on how to do that:
-   
-   
-                ////<-- this number is the delay in milliseconds that you are waiting before running the code within this method.
-
-
-  //// this is where the code goes that you want to execute
-
-// 2a.  Your game should now function properly, storing matches face-up correctly on the screen and flipping non-matches back over.  The next part of the coding process is to determine when the game is over.  A simple way to do this is by counting the matches as the user makes them.  Add a variable named 'matches' to your list of declarations at the top of your code and initialize it to 0 inside your init function.  Every time the user matches two cards, you'll need to increment it by 1.  Write the code to make this happen in the correct place.  (Where you're comparing the cards to check for a match.)  Console.log(matches) to verify that it is properly increasing by 1 every time you select a matching set of cards.
-
 // 2b.  After 6 matches have been found, your 'winner' variable should be set to true.  You should do this in the same place you wrote the code for 2a.  Test it out by console.log(winner) in your render function.  When you win the game, you should see `true` appear in the console.
 
 // 3a.  In order to display messages to the user when they make a match, you'll need to KNOW whether they successfully picked a matching card on their second click.  You have access to whether the user is picking their first or second card already within the 'firstPicked' variable you set up last night.  Since you don't have access to whether or not the user just made a match anywhere in the game's logic, you'll need to add a variable to track it.  Create a variable named 'justMatched' and initialize it to null.  (I'll explain why we're using null in a minute...)  
