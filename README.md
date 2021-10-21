@@ -21,11 +21,11 @@ ___
 
 ## Images
 Wire Frame of intial game design:
-![Wire Frame](..images/hp/wireframe.jpg)
+![Wire Frame](../images/hp/wireframe.jpg)
 Playing board before any cards are matched:
-![Initial Board](..images/hp/UnmatchedBoard.jpg)
+![Initial Board](../images/hp/UnmatchedBoard.jpg)
 Playing board with all cards matched:
-![MatchedBoard](..images/hp/MatchedBoard.jpg)
+![MatchedBoard](../images/hp/MatchedBoard.jpg)
 
 
 ___
