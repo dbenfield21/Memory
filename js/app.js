@@ -79,10 +79,10 @@ init()
     // loop over all of the card elements and render them based on the status property of the object located within the matching index of the cards array
     cardEls.forEach((card, idx) => {
       if (cards[idx].status === "hidden") {
-        card.className = "card xlarge shadow back"
+        card.className = "card large shadow back"
       }
       else {
-        card.className = `${cards[idx].name} card xlarge shadow`
+        card.className = `${cards[idx].name} card large shadow`
       }
       console.log(winner)
     })
@@ -107,6 +107,7 @@ init()
     
   function handleClick(evt) {
     if (firstPick === true) {
+      console.log("firstClick")
       // if this is the first card clicked then change status to picked.
       cards[evt.target.id].status = "picked"
       card1 = cards[evt.target.id]
@@ -117,8 +118,9 @@ init()
       cards[evt.target.id].status = "picked"
       card2 = cards[evt.target.id]
       checkForMatch(card1, card2)
-      render()
-  }
+    }
+    render()
+}
 
 // -Matching Cards 
 
@@ -128,74 +130,23 @@ init()
         if(matches === 6) {
           winner = true
         }
+        console.log(matches)
       cards.forEach((card) => {
         if (card.status === "picked") {
             card.status = "matched"
-            
           }})}
             
-    else  {
+    else {
       cards.forEach((card) => {
         if (card.status === "picked") {
           setTimeout(()=> {
           card.status = "hidden"
           render()
           }, 1000) 
-        }
+      }
       })
         
-    }
-  }
-  
-  
-
-
-
-
-    
-    // Step by Step
-    
-    // Start Game. Run init, basic board set up. 
-    // Play button-Event listener 
-    // Cards need to be active to click 
-    // Match image hidden, all  cards showing same image or color.  
-    // Click 1st card
-    // Show image, card remains on the screen/don’t go back to the original color. 
-    // Click 2nd card
-    // Show image, remains on the screen/don’t go back to the original color. 
-    // Determine if card 1 and card 2 are matching
-    // If they are matching then “Matching message” (Maybe audio?)
-    // Cards stay on the board (or disappear if possible) (ANIMATE?)
-    // If they are NOT matching, return to original color/image.
-    // Repeat that until all cards have been hidden
-    // Message “all cards have been hidden” (Maybe audio?)
-    // Replay button
-    // Return board to init state
-    
-    
-    
-    
-    
-    
-    //// 1a.  Inside your checkForMatch function, you'll have two conditions:  Either the cards match, or they don't.  Write an if--else statement to handle each of these cases.
-    
-    //// 1b.  If the cards match (the 'if' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'matched'.
-    
-    //// 1c.  If the cards to NOT match (the 'else' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'hidden'.
-    
-    //// 1d.  After writing this code, you'll notice that when you flip the second card, you can't see it because it's flipping back to 'hidden' faster than the blink of an eye.  You need to wrap the inner part of the forEach loop inside of a setTimeout method and give it a delay, so the user is able to see the second card before they both flip back to 'hidden'.  Here's a hint on how to do that:
-    
-  
-
-                
-                
-                
-                ////<-- this number is the delay in milliseconds that you are waiting before running the code within this method.
-
-
-  //// this is where the code goes that you want to execute
-
-// 2a.  Your game should now function properly, storing matches face-up correctly on the screen and flipping non-matches back over.  The next part of the coding process is to determine when the game is over.  A simple way to do this is by counting the matches as the user makes them.  Add a variable named 'matches' to your list of declarations at the top of your code and initialize it to 0 inside your init function.  Every time the user matches two cards, you'll need to increment it by 1.  Write the code to make this happen in the correct place.  (Where you're comparing the cards to check for a match.)  Console.log(matches) to verify that it is properly increasing by 1 every time you select a matching set of cards.
+    }}
 
 // 2b.  After 6 matches have been found, your 'winner' variable should be set to true.  You should do this in the same place you wrote the code for 2a.  Test it out by console.log(winner) in your render function.  When you win the game, you should see `true` appear in the console.
 
@@ -240,3 +191,24 @@ init()
   // - Call render()
   
   // - Configure a setTimeout function using the syntax shown in the example above to change the status of the cards BACK to 'hidden' using another forEach loop after a short delay.  (maybe 200 milliseconds?)
+
+
+// Step by Step
+    
+    // Start Game. Run init, basic board set up. 
+    // Play button-Event listener 
+    // Cards need to be active to click 
+    // Match image hidden, all  cards showing same image or color.  
+    // Click 1st card
+    // Show image, card remains on the screen/don’t go back to the original color. 
+    // Click 2nd card
+    // Show image, remains on the screen/don’t go back to the original color. 
+    // Determine if card 1 and card 2 are matching
+    // If they are matching then “Matching message” (Maybe audio?)
+    // Cards stay on the board (or disappear if possible) (ANIMATE?)
+    // If they are NOT matching, return to original color/image.
+    // Repeat that until all cards have been hidden
+    // Message “all cards have been hidden” (Maybe audio?)
+    // Replay button
+    // Return board to init state
+
