@@ -91,7 +91,7 @@ function render() {
       winner.innerHTML = "<p>You won, all cards matched!</p>"
       setTimeout(function () {
         winner.innerHTML = ""
-      }, 5000)
+      }, 6000)
     }
   })
 }
