@@ -25,7 +25,8 @@ Wire Frame of intial game design:
 Playing board before any cards are matched:
 ![Initial Board](/images/hp/UnmatchedBoard.jpg)
 Playing board with all cards matched:
-![MatchedBoard](/images/hp/MatchedBoard.jpg)
+![MatchedBoard](https://raw.githubusercontent.com/dbenfield21/memory/images/hp/MatchedBoard.jpg)
+
 
 ___
 
