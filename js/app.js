@@ -12,6 +12,7 @@ let firstPick
 let card1
 let card2
 let matches
+let justMatched
 
 
 
@@ -65,6 +66,7 @@ function init() {
   winner = false
   firstPick = true
   matches = 0
+  justMatched = null
   render()
 }
 
@@ -84,9 +86,14 @@ init()
       else {
         card.className = `${cards[idx].name} card large shadow`
       }
-      console.log(winner)
+    //  function winner (justMatched) {
+    //  for (winner === true) 
+    // let justMatched = document.getElementById("message"),innerText = "You won, all cards matched!"
+    //       }
     })
   }
+
+  
   
     
 //shuffle 
@@ -147,8 +154,9 @@ init()
       })
         
     }}
+    
 
-// 2b.  After 6 matches have been found, your 'winner' variable should be set to true.  You should do this in the same place you wrote the code for 2a.  Test it out by console.log(winner) in your render function.  When you win the game, you should see `true` appear in the console.
+//// 2b.  After 6 matches have been found, your 'winner' variable should be set to true.  You should do this in the same place you wrote the code for 2a.  Test it out by console.log(winner) in your render function.  When you win the game, you should see `true` appear in the console.
 
 // 3a.  In order to display messages to the user when they make a match, you'll need to KNOW whether they successfully picked a matching card on their second click.  You have access to whether the user is picking their first or second card already within the 'firstPicked' variable you set up last night.  Since you don't have access to whether or not the user just made a match anywhere in the game's logic, you'll need to add a variable to track it.  Create a variable named 'justMatched' and initialize it to null.  (I'll explain why we're using null in a minute...)  
 

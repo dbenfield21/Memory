@@ -1,7 +1,8 @@
 # **_Obliviate_**
 _____
 
-## Description & Background 
+## Getting Started
+### **Description & Background**
 Obliviate is a memory card matching game. Players chose one card by clicking and then a second to determine if they are matches (based on the cards image). If the two cards are matches they remain face up, otherwise both cards flip back to their original state, face down. Players must remeber the location of the cards that have not been flipped, in order to chose the correct matches. Once all matches have been made (6) the game is won.
 
 I loved to play memory games as a kid, especially a game called "Apples to Apples". Obliviate is Harry Potter themed because of my love for Harry Potter and its asthetic. 
@@ -37,12 +38,14 @@ ___
     -HTML
 
     -CSS
+    
+    -CSS Card Starter
 
     -Git
 
     -Surge for publishing 
- 
 
+    
 
 Credit for the
 custom background image [source](https://www.wallpaperflare.com/white-and-black-starry-night-wallpaper-space-stars-star-space-wallpaper-syvkr). 
