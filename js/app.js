@@ -11,6 +11,7 @@ let winner
 let firstPick 
 let card1
 let card2
+let matches
 
 
 
@@ -63,7 +64,8 @@ function init() {
   cards = shuffle(newDeck)
   winner = false
   firstPick = true
-  waitingForTimeout = true
+  matches = 0
+  // waitingForTimeout = true
   render()
 }
 
@@ -115,11 +117,57 @@ init()
       cards[evt.target.id].status = "picked"
       card2 = cards[evt.target.id]
       checkForMatch(card1, card2)
+      // setTimeout(()=> {
+      //   checkForMatch(card1, card2)
+      //   waitingForTimeout = true
+      //           }, 1000) 
     }
     render()
   }
 
-    // -Matching Cards 
+// -Matching Cards 
+
+  function checkForMatch (card1, card2){
+    if (card1.name === card2.name){ 
+      cards.forEach((card) => {
+        if (card.status === "picked") {
+            card.status = "matched"
+            // matchNumber ()
+            // while(card.status === "matched", matches <= 6) {
+            //   matches++
+            // }
+          }})}
+            
+    else  {
+        cards.forEach((card) => {
+        // setTimeout(()=> {
+        // checkForMatch(card1, card2)
+        // waitingForTimeout = true
+        //         }, 1000) 
+        //   // waitingForTimeout = false
+          if (card.status === "picked") {
+            card.status = "hidden"
+          }
+        })
+        
+      }
+    }
+  
+  // function matchNumber() {
+  //   let cardEls = document.querySelectorAll(".card")
+  //   //see if all the cards are matched
+  //  
+    // cards.forEach((card) => {
+    //   if (card.status === "matched") {
+    //     matches++;
+    //   }
+    // })}
+
+
+
+
+
+
     
     // Step by Step
     
@@ -145,42 +193,23 @@ init()
     
     
     
-    // 1a.  Inside your checkForMatch function, you'll have two conditions:  Either the cards match, or they don't.  Write an if--else statement to handle each of these cases.
+    //// 1a.  Inside your checkForMatch function, you'll have two conditions:  Either the cards match, or they don't.  Write an if--else statement to handle each of these cases.
     
-    // 1b.  If the cards match (the 'if' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'matched'.
+    //// 1b.  If the cards match (the 'if' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'matched'.
     
-    // 1c.  If the cards to NOT match (the 'else' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'hidden'.
+    //// 1c.  If the cards to NOT match (the 'else' part of the above statement), you'll need to use a forEach loop on the cards array and iterate over each card object.  If the card has a status of 'picked', it should be set to 'hidden'.
     
     // 1d.  After writing this code, you'll notice that when you flip the second card, you can't see it because it's flipping back to 'hidden' faster than the blink of an eye.  You need to wrap the inner part of the forEach loop inside of a setTimeout method and give it a delay, so the user is able to see the second card before they both flip back to 'hidden'.  Here's a hint on how to do that:
     
-    
-    function checkForMatch (card1, card2){
-      if (card1.name === card2.name){ 
-        cards.forEach((card) => {
-          if (card.status === "picked") {
-              card.status = "matched"
-          }
-      })
-    } else  {
-        cards.forEach((card) => {
-          if (card.status === "picked") {
-            card.status = "hidden"
-          }
-        })
-        // setTimeout(()=> {
-        
-        //         }, 1000) 
-      }
-    }
-
+  
 
                 
                 
                 
-                //<-- this number is the delay in milliseconds that you are waiting before running the code within this method.
+                ////<-- this number is the delay in milliseconds that you are waiting before running the code within this method.
 
 
-  // this is where the code goes that you want to execute
+  //// this is where the code goes that you want to execute
 
 // 2a.  Your game should now function properly, storing matches face-up correctly on the screen and flipping non-matches back over.  The next part of the coding process is to determine when the game is over.  A simple way to do this is by counting the matches as the user makes them.  Add a variable named 'matches' to your list of declarations at the top of your code and initialize it to 0 inside your init function.  Every time the user matches two cards, you'll need to increment it by 1.  Write the code to make this happen in the correct place.  (Where you're comparing the cards to check for a match.)  Console.log(matches) to verify that it is properly increasing by 1 every time you select a matching set of cards.
 
