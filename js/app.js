@@ -9,7 +9,8 @@ let playBoard = []
 
 let winner
 let firstPick 
-
+let card1
+let card2
 
 
 
@@ -17,7 +18,7 @@ let firstPick
 
 
 
-let cardEls = document.querySelectorAll('.card')
+let cardEls = document.querySelectorAll(".card")
 let message = document.getElementById("message") 
 let replayButtton = document.getElementById("replay")
 let peekButton = document.getElementById("view-board")
@@ -27,7 +28,7 @@ let peekButton = document.getElementById("view-board")
 /*----------------------------- Event Listeners -----------------------------*/
 
 
-cardEls.forEach(card => {
+cardEls.forEach((card) => {
   card.addEventListener('click', handleClick)
 })
 
@@ -46,33 +47,44 @@ replay.addEventListener('click', init)
 
 function init() {
   let newDeck = [
-    {name:"hp1", status: 'hidden'}, {name:"hp1", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp2", status: 'hidden'}, {name:"hp3", status: 'hidden'}, {name:"hp3", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp4", status: 'hidden'}, {name:"hp5", status: 'hidden'}, {name:"hp5", status: 'hidden'}, {name:"hp6", status: 'hidden'}, {name:"hp6", status: 'hidden'}]
-  // shuffle the deck
+    {name:"hp1", status: "hidden"},
+    {name:"hp1", status: "hidden"}, 
+    {name:"hp2", status: "hidden"}, 
+    {name:"hp2", status: "hidden"}, 
+    {name:"hp3", status: "hidden"}, 
+    {name:"hp3", status: "hidden"}, 
+    {name:"hp4", status: "hidden"}, 
+    {name:"hp4", status: "hidden"}, 
+    {name:"hp5", status: "hidden"}, 
+    {name:"hp5", status: "hidden"}, 
+    {name:"hp6", status: "hidden"}, 
+    {name:"hp6", status: "hidden"},
+  ]
   cards = shuffle(newDeck)
-  // DO I NEED TO PUT SHUFFLED CARDS EMPTY ARRAY IN HERE
   winner = false
   firstPick = true
+  waitingForTimeout = true
   render()
-  console.log(cards)
 }
 
 
-// invoking the init function 
+ // invoking the init function 
+
 init()
 
 //  -Render
 
-function render () {
-  // loop over all of the card elements and render them based on the status property of the object located within the matching index of the cards array
-  cardEls.forEach((card, idx) => {
-    if (cards[idx].status === "hidden"){
-      card.className = "card xlarge shadow back"
-    }
-    else {
-      card.className = `${cards[idx].name} card xlarge shadow`
-    }
-  })
-}
+  function render () {
+    // loop over all of the card elements and render them based on the status property of the object located within the matching index of the cards array
+    cardEls.forEach((card, idx) => {
+      if (cards[idx].status === "hidden") {
+        card.className = "card xlarge shadow back"
+      }
+      else {
+        card.className = `${cards[idx].name} card xlarge shadow`
+      }
+    })
+  }
   
     
 //shuffle 
@@ -91,34 +103,23 @@ function render () {
     
 // handle click 
     
-    function handleClick(evt){
-      if (firstPick === true) {
-        // if this is the first card clicked then change status to picked.
-        cards[evt.target.id].status = "picked"
-        card1 = cards[evt.target.id].name
-        firstPick = false
-      } else  {
-        // if 2nd card picked to picked THEN check if card 1 and card 2 are matches
-        firstPick= true 
-        cards[evt.target.id].status = "picked"
-        card2 = cards[evt.target.id].name
-        console.log(cards[evt.target.id])
-        checkForMatch(card1, card2)
-      }
-      render()
+  function handleClick(evt) {
+    if (firstPick === true) {
+      // if this is the first card clicked then change status to picked.
+      cards[evt.target.id].status = "picked"
+      card1 = cards[evt.target.id]
+      firstPick = false
+    } else  {
+      // if 2nd card picked to picked THEN check if card 1 and card 2 are matches
+      firstPick = true 
+      cards[evt.target.id].status = "picked"
+      card2 = cards[evt.target.id]
+      checkForMatch(card1, card2)
     }
+    render()
+  }
 
-    // -Matching Cards
-
-   
-
-   
-    
-    
-    
-    
-    
-    
+    // -Matching Cards 
     
     // Step by Step
     
@@ -154,36 +155,32 @@ function render () {
     
     
     function checkForMatch (card1, card2){
-      // console.log(card1, card2)
-      if (card1.name === card2.name) {
-        forEach(pickedCard) 
-        cards[evt.target.id].status = "matched"
-      }
-      else  {
-        forEach
-        cards[evt.target.id].status = "hidden"
+      if (card1.name === card2.name){ 
+        cards.forEach((card) => {
+          if (card.status === "picked") {
+              card.status = "matched"
+          }
+      })
+    } else  {
+        cards.forEach((card) => {
+          if (card.status === "picked") {
+            card.status = "hidden"
+          }
+        })
+        // setTimeout(()=> {
+        
+        //         }, 1000) 
       }
     }
-      
 
 
+                
+                
+                
+                //<-- this number is the delay in milliseconds that you are waiting before running the code within this method.
 
 
-
-
-
-
-    // if card 1 === card 2 then match message, third status property that = matched. 
-    // loop cards.forEach and if the status is picked change to matched. 
-    // else card 1 doesnt = 2 then change back to hidden 
-    // loop with cards.forEach and if the status is picked change to hidden.  
-
-
-
-
-setTimeout(()=> {
   // this is where the code goes that you want to execute
-}, 1000) //<-- this number is the delay in milliseconds that you are waiting before running the code within this method.
 
 // 2a.  Your game should now function properly, storing matches face-up correctly on the screen and flipping non-matches back over.  The next part of the coding process is to determine when the game is over.  A simple way to do this is by counting the matches as the user makes them.  Add a variable named 'matches' to your list of declarations at the top of your code and initialize it to 0 inside your init function.  Every time the user matches two cards, you'll need to increment it by 1.  Write the code to make this happen in the correct place.  (Where you're comparing the cards to check for a match.)  Console.log(matches) to verify that it is properly increasing by 1 every time you select a matching set of cards.
 
