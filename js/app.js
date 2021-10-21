@@ -65,7 +65,6 @@ function init() {
   winner = false
   firstPick = true
   matches = 0
-  // waitingForTimeout = true
   render()
 }
 
@@ -118,12 +117,7 @@ init()
       cards[evt.target.id].status = "picked"
       card2 = cards[evt.target.id]
       checkForMatch(card1, card2)
-      // setTimeout(()=> {
-      //   checkForMatch(card1, card2)
-      //   waitingForTimeout = true
-      //           }, 1000) 
-    }
-    render()
+      render()
   }
 
 // -Matching Cards 
